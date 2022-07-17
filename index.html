@@ -1,5 +1,39 @@
 ---
 layout: default
 title: Homepage
+news:
+ - title: Big Sale
+   description: there's a sale happening
+   date: 13 Jan
+   category: promo
+   url: https://www.sale.com 
+ - title: New Stock
+   description: New Ena Pelly in store
+   date: 15 Jan
+   category: stock
+   url: https://www.sale.com 
+ - title: footwear is back
+   description: re-stock of sneakers
+   date: 10 Jan
+   category: stock
+   url: https://www.sale.com 
+
+    
 ---
-<h1>Welcome to your homepage!</h1>
+<section class="grid-spaceBetween padded mob-padded-0 bg-featured latest-news">
+
+{% for item in page.news %}
+      <!-- First Card   -->
+      <div class="col-4_xs-7 card">
+          <div class="bg-image">
+            <span> {{item.category}} </span>  
+          </div> 
+          <div class="post-info"> 
+            <p class="date"> {{item.date}} </p> 
+            <h3> {{item.title}} </h3> 
+            <p> {{item.description}} </p> 
+            <a href="{{item.url}}"> Find out more &nbsp; &#10141;</a>
+          </div>
+      </div> 
+      {% endfor %}
+  </section> 
